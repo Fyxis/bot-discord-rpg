@@ -1,0 +1,15 @@
+{
+    "fyxis45": {
+        "name": "fyxis45",
+        "hp": 67,
+        "attack": 10,
+        "defense": 5,
+        "level": 1,
+        "experience": 49,
+        "inventory": [
+            "Potion",
+            "Potion",
+            "Potion"
+        ]
+    }
+}
