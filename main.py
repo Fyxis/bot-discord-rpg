@@ -99,7 +99,6 @@ async def adventure(interaction: discord.Interaction):
     
     chanceGetSkill = random.randint(1, 100)
     player_name = str(interaction.user)
-    print(chanceGetSkill)
 
     if player_name not in players_data:
         await interaction.response.send_message(f"{interaction.user.mention}, kamu belum memulai permainan! Gunakan `{PREFIX}start` untuk memulai.")
@@ -109,20 +108,20 @@ async def adventure(interaction: discord.Interaction):
     player = players_data[player_name]
     
     if outcome == 'success':
-        # Berhasil dalam petualangan, dapatkan EXP
+        # Successfully fight, gained exp
         gained_exp = random.randint(10, 30)
         player['experience'] += gained_exp
         message = f"{interaction.user.mention}, petualangan sukses! Kamu mendapatkan **{gained_exp}** EXP."
         
-        # Cek jika level up
+        # Check if level up
         if player['experience'] >= 100:
             player['level'] += 1
             player['experience'] = 0
-            player['hp'] += 20  # Tambahkan bonus HP setiap naik level
+            player['hp'] += random.randint(20, 50)  # Add hp stat
             message += f" Selamat! Kamu naik ke level **{player['level']}**!"
 
     elif outcome == 'failure':
-        # Gagal dalam petualangan, kehilangan sedikit HP
+        # Unsuccessfully fight, lost less hp
         lost_hp = random.randint(5, 15)
         player['hp'] -= lost_hp
         if player['hp'] < 0:
@@ -130,16 +129,16 @@ async def adventure(interaction: discord.Interaction):
         message = f"{interaction.user.mention}, petualangan gagal. Kamu kehilangan **{lost_hp}** HP. HP kamu sekarang **{player['hp']}**."
 
     elif outcome == 'treasure':
-        # Berhasil menemukan harta karun
+        # Successfully get treasure
         treasure = random.choice(['Potion', 'Sword', 'Shield'])
         message = f"{interaction.user.mention}, kamu menemukan harta karun dan mendapatkan item: **{treasure}**!"
 
-        # Tambahkan item ke inventaris pemain
+        # Add item in user inventory
         if 'inventory' not in player:
             player['inventory'] = []
         player['inventory'].append(treasure)
         
-    if chanceGetSkill <= 20:
+    if chanceGetSkill <= 2:
         aiSkill = utils.aiApi("Give 1 unique name skill")
         if 'skills' not in player:
             player['skills'] = []

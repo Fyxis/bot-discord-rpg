@@ -1,0 +1,282 @@
+[
+    {
+        "name": "Dragon's Fury",
+        "hp": 0,
+        "attack": 30,
+        "defense": -10,
+        "description": "Boosts attack greatly but decreases defense."
+    },
+    {
+        "name": "Titan's Shield",
+        "hp": 20,
+        "attack": -10,
+        "defense": 40,
+        "description": "Enhances defense significantly at the cost of some attack."
+    },
+    {
+        "name": "Phoenix Rebirth",
+        "hp": 50,
+        "attack": 0,
+        "defense": 10,
+        "description": "Restores a large amount of HP and provides a small defense boost."
+    },
+    {
+        "name": "Berserker's Rage",
+        "hp": -10,
+        "attack": 50,
+        "defense": -20,
+        "description": "Increases attack immensely but sacrifices HP and defense."
+    },
+    {
+        "name": "Mystic Barrier",
+        "hp": 10,
+        "attack": 0,
+        "defense": 30,
+        "description": "Magical shield that boosts defense."
+    },
+    {
+        "name": "Thunder Strike",
+        "hp": 0,
+        "attack": 40,
+        "defense": -5,
+        "description": "Powerful lightning attack that slightly reduces defense."
+    },
+    {
+        "name": "Healing Light",
+        "hp": 30,
+        "attack": 0,
+        "defense": 0,
+        "description": "Restores a significant amount of HP."
+    },
+    {
+        "name": "Shadow Cloak",
+        "hp": 0,
+        "attack": 10,
+        "defense": 20,
+        "description": "Increases defense and evasion chance."
+    },
+    {
+        "name": "Blazing Inferno",
+        "hp": 0,
+        "attack": 35,
+        "defense": -10,
+        "description": "Fire attack with strong damage but reduces defense."
+    },
+    {
+        "name": "Guardian's Will",
+        "hp": 15,
+        "attack": 0,
+        "defense": 25,
+        "description": "Boosts physical resilience and defense."
+    },
+    {
+        "name": "Icebound Fortitude",
+        "hp": 20,
+        "attack": 0,
+        "defense": 30,
+        "description": "Increases defense with ice magic."
+    },
+    {
+        "name": "Divine Smite",
+        "hp": 0,
+        "attack": 45,
+        "defense": 0,
+        "description": "A mighty divine strike with high attack power."
+    },
+    {
+        "name": "Venomous Strike",
+        "hp": 0,
+        "attack": 25,
+        "defense": -5,
+        "description": "Poisonous attack with a small defense reduction."
+    },
+    {
+        "name": "Stonewall Resilience",
+        "hp": 10,
+        "attack": 0,
+        "defense": 35,
+        "description": "Provides extra protection against physical attacks."
+    },
+    {
+        "name": "Spirit Link",
+        "hp": 20,
+        "attack": 10,
+        "defense": 10,
+        "description": "Balances HP, attack, and defense moderately."
+    },
+    {
+        "name": "Stormbringer",
+        "hp": 0,
+        "attack": 50,
+        "defense": -15,
+        "description": "Unleashes a powerful storm attack with a defense reduction."
+    },
+    {
+        "name": "Iron Will",
+        "hp": 25,
+        "attack": 0,
+        "defense": 15,
+        "description": "Increases mental resilience with extra HP and defense."
+    },
+    {
+        "name": "Celestial Blessing",
+        "hp": 30,
+        "attack": 0,
+        "defense": 20,
+        "description": "Heals and provides a defense boost through divine power."
+    },
+    {
+        "name": "Infernal Fury",
+        "hp": -15,
+        "attack": 60,
+        "defense": -10,
+        "description": "A powerful fire attack at the cost of HP and defense."
+    },
+    {
+        "name": "Nature's Gift",
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "description": "Restores a large amount of HP naturally."
+    },
+    {
+        "name": "Shadow Cloak",
+        "hp": 0,
+        "attack": 10,
+        "defense": 20,
+        "description": "Increases defense and evasion chance, providing a tactical advantage."
+    },
+    {
+        "name": "Blazing Inferno",
+        "hp": 0,
+        "attack": 35,
+        "defense": -10,
+        "description": "Unleashes a fiery attack that greatly boosts damage but reduces defense."
+    },
+    {
+        "name": "Guardian's Will",
+        "hp": 15,
+        "attack": 0,
+        "defense": 25,
+        "description": "Enhances physical resilience and significantly boosts defense."
+    },
+    {
+        "name": "Icebound Fortitude",
+        "hp": 20,
+        "attack": 0,
+        "defense": 30,
+        "description": "Increases defense with the power of ice, reducing incoming damage."
+    },
+    {
+        "name": "Divine Smite",
+        "hp": 0,
+        "attack": 45,
+        "defense": 0,
+        "description": "A powerful divine attack that deals immense damage."
+    },
+    {
+        "name": "Venomous Strike",
+        "hp": 0,
+        "attack": 25,
+        "defense": -5,
+        "description": "A poison-laced strike that boosts attack but slightly decreases defense."
+    },
+    {
+        "name": "Stonewall Resilience",
+        "hp": 10,
+        "attack": 0,
+        "defense": 35,
+        "description": "Provides robust defense, making the user highly resistant to physical attacks."
+    },
+    {
+        "name": "Spirit Link",
+        "hp": 20,
+        "attack": 10,
+        "defense": 10,
+        "description": "Balances HP, attack, and defense for a moderate increase across the board."
+    },
+    {
+        "name": "Stormbringer",
+        "hp": 0,
+        "attack": 50,
+        "defense": -15,
+        "description": "Unleashes a stormy wrath with high attack power at the cost of defense."
+    },
+    {
+        "name": "Iron Will",
+        "hp": 25,
+        "attack": 0,
+        "defense": 15,
+        "description": "Boosts HP and defense, reinforcing mental and physical resilience."
+    },
+    {
+        "name": "Celestial Blessing",
+        "hp": 30,
+        "attack": 0,
+        "defense": 20,
+        "description": "Heals the user while enhancing defense through divine energy."
+    },
+    {
+        "name": "Infernal Fury",
+        "hp": -15,
+        "attack": 60,
+        "defense": -10,
+        "description": "A high-risk, high-reward fiery attack that greatly boosts attack but sacrifices HP and defense."
+    },
+    {
+        "name": "Nature's Gift",
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "description": "Restores a large amount of HP with a touch of nature’s power."
+    },
+    {
+        "name": "Arcane Burst",
+        "hp": 0,
+        "attack": 40,
+        "defense": -5,
+        "description": "A sudden burst of arcane energy that increases attack while slightly reducing defense."
+    },
+    {
+        "name": "Ethereal Veil",
+        "hp": 15,
+        "attack": 0,
+        "defense": 20,
+        "description": "Grants a mystical shield that increases defense and evasion."
+    },
+    {
+        "name": "Soul Drain",
+        "hp": 10,
+        "attack": 30,
+        "defense": -10,
+        "description": "Absorbs energy from the target, boosting attack and a small amount of HP, at the cost of some defense."
+    },
+    {
+        "name": "Light's Embrace",
+        "hp": 35,
+        "attack": 0,
+        "defense": 15,
+        "description": "Heals a significant amount of HP and provides a defense boost."
+    },
+    {
+        "name": "Raging Gale",
+        "hp": 0,
+        "attack": 45,
+        "defense": -10,
+        "description": "Harnesses the power of wind to increase attack, reducing defense slightly."
+    },
+    {
+        "name": "Earth's Resilience",
+        "hp": 20,
+        "attack": 0,
+        "defense": 25,
+        "description": "Roots the user in strength, boosting defense and HP."
+    },
+    {
+        "name": "Frostbite Touch",
+        "hp": 0,
+        "attack": 30,
+        "defense": 5,
+        "description": "A chilling touch that boosts attack and provides a slight defense boost."
+    }
+]
