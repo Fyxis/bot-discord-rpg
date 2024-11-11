@@ -1,15 +1,25 @@
 {
     "fyxis45": {
         "name": "fyxis45",
-        "hp": 67,
+        "hp": 24,
         "attack": 10,
         "defense": 5,
         "level": 1,
-        "experience": 49,
+        "experience": 65,
         "inventory": [
             "Potion",
             "Potion",
-            "Potion"
+            "Potion",
+            "Shield",
+            "Sword",
+            "Sword",
+            "Sword",
+            "Potion",
+            "Shield",
+            "Sword"
+        ],
+        "skills": [
+            "Eclipse Veil"
         ]
     }
 }

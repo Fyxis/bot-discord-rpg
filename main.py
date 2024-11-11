@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import random
 import variables
+import utils
 
 TOKEN = variables.BOT_TOKEN
 PREFIX = variables.BOT_PREFIX
@@ -45,6 +46,7 @@ async def on_ready():
     # Sync the commands globally
     await bot.tree.sync()
 
+# PING
 @bot.tree.command(name='ping', description='Replies with pong!')
 async def ping(interaction: discord.Interaction):
     guildName = interaction.guild.name
@@ -52,6 +54,7 @@ async def ping(interaction: discord.Interaction):
     await interaction.response.defer()
     await interaction.followup.send('Pong!')
 
+# START
 @bot.tree.command(name='start', description='Start a new game!')
 async def start_game(interaction: discord.Interaction):
     # Checking player
@@ -65,6 +68,7 @@ async def start_game(interaction: discord.Interaction):
     saveData(players_data)
     await interaction.response.send_message(f"{interaction.user.mention}, permainan dimulai! Selamat datang di dunia RPG!")
 
+# PROFILE
 @bot.tree.command(name='profile', description='See your profile and status!')
 async def check_status(interaction: discord.Interaction):
     # Profile overview
@@ -87,10 +91,16 @@ async def check_status(interaction: discord.Interaction):
     embed.add_field(name="🔷 Experience", value=player['experience'], inline=True)
 
     await interaction.response.send_message(embed = embed)
-    
+
+# ADVENTURE
 @bot.tree.command(name='adventure', description='Go play around and kill nearby monster!')
 async def adventure(interaction: discord.Interaction):
+    await interaction.response.defer()
+    
+    chanceGetSkill = random.randint(1, 100)
     player_name = str(interaction.user)
+    print(chanceGetSkill)
+
     if player_name not in players_data:
         await interaction.response.send_message(f"{interaction.user.mention}, kamu belum memulai permainan! Gunakan `{PREFIX}start` untuk memulai.")
         return
@@ -102,14 +112,14 @@ async def adventure(interaction: discord.Interaction):
         # Berhasil dalam petualangan, dapatkan EXP
         gained_exp = random.randint(10, 30)
         player['experience'] += gained_exp
-        message = f"{interaction.user.mention}, petualangan sukses! Kamu mendapatkan {gained_exp} EXP."
+        message = f"{interaction.user.mention}, petualangan sukses! Kamu mendapatkan **{gained_exp}** EXP."
         
         # Cek jika level up
         if player['experience'] >= 100:
             player['level'] += 1
             player['experience'] = 0
             player['hp'] += 20  # Tambahkan bonus HP setiap naik level
-            message += f" Selamat! Kamu naik ke level {player['level']}!"
+            message += f" Selamat! Kamu naik ke level **{player['level']}**!"
 
     elif outcome == 'failure':
         # Gagal dalam petualangan, kehilangan sedikit HP
@@ -117,20 +127,27 @@ async def adventure(interaction: discord.Interaction):
         player['hp'] -= lost_hp
         if player['hp'] < 0:
             player['hp'] = 0
-        message = f"{interaction.user.mention}, petualangan gagal. Kamu kehilangan {lost_hp} HP. HP kamu sekarang {player['hp']}."
+        message = f"{interaction.user.mention}, petualangan gagal. Kamu kehilangan **{lost_hp}** HP. HP kamu sekarang **{player['hp']}**."
 
     elif outcome == 'treasure':
         # Berhasil menemukan harta karun
         treasure = random.choice(['Potion', 'Sword', 'Shield'])
-        message = f"{interaction.user.mention}, kamu menemukan harta karun dan mendapatkan item: {treasure}!"
+        message = f"{interaction.user.mention}, kamu menemukan harta karun dan mendapatkan item: **{treasure}**!"
 
         # Tambahkan item ke inventaris pemain
         if 'inventory' not in player:
             player['inventory'] = []
         player['inventory'].append(treasure)
         
+    if chanceGetSkill <= 20:
+        aiSkill = utils.aiApi("Give 1 unique name skill")
+        if 'skills' not in player:
+            player['skills'] = []
+        player['skills'].append(aiSkill)
+        message += f" Keberuntungan berpihak padamu! Kamu mendapatkan skill baru: **{aiSkill}**!"
+        
     saveData(players_data)
-    await interaction.response.send_message(message)
+    await interaction.followup.send(message)
         
 if __name__ == '__main__':
     bot.run(TOKEN)
